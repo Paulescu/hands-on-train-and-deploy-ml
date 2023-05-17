@@ -1,4 +1,5 @@
 from typing import Optional
+from pathlib import Path
 
 import pandas as pd
 import requests
@@ -13,7 +14,7 @@ def download_ohlc_data_from_coinbase(
     product_id: Optional[str] = "BTC-USD",
     from_day: Optional[str] = "2023-01-01",
     to_day: Optional[str] = "2023-05-01",
-):
+) -> Path:
     """
     Downloads historical candles from Coinbase API and saves data to disk
     Reference: https://docs.cloud.coinbase.com/exchange/reference/exchangerestapi_getproductcandles
@@ -46,8 +47,10 @@ def download_ohlc_data_from_coinbase(
         data = pd.concat([data, data_one_day])
 
     # save data to disk   
-    data.to_parquet(DATA_DIR / f"ohlc_from_{from_day}_to_{to_day}.parquet", index=False)
+    # data.to_parquet(DATA_DIR / f"ohlc_from_{from_day}_to_{to_day}.parquet", index=False)
+    data.to_parquet(DATA_DIR / f"ohlc_data.parquet", index=False)
 
+    return DATA_DIR / f"ohlc_data.parquet"
 
 def download_data_for_one_day(product_id: str, day: str) -> pd.DataFrame:
     """

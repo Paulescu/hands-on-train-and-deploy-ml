@@ -3,21 +3,13 @@
     <h1>Train and Deploy a real-time ML model</h1>
     <i><a href="https://www.comet.com/site/">CometML</a></i> + <i><a href="https://www.cerebrium.ai/">Cerebrium</a></i> = 🚀
 </div>
-
-<div align="center">
-    <sub>Let's connect 🤗</sub>
-    <br />
-    <a href="https://twitter.com/paulabartabajo_">Twitter</a> •
-    <a href="https://www.linkedin.com/in/pau-labarta-bajo-4432074b/">LinkedIn</a> •
-    <a href="https://paulabartabajo.substack.com/">Newsletter</a>
 <br />
-</div>
-
-<br />
-
 <p align="center">
-  <img src="images/header.png" width='600' />
+  <img src="images/header.jpg" width='600' />
 </p>
+
+<br />
+
 
 #### Contents
 - [The problem]()
