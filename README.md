@@ -12,18 +12,26 @@
 
 
 #### Contents
-- [The problem]()
-- [Lectures]()
+- [The problem](#the-problem)
+- [Lectures](#lectures)
     - [1. Model training](#1-model-training)
     - [2. Model deployment as REST API](#2-model-deployment-as-rest-api)
     - [3. Test API endpoint](#3-test-api-endpoint)
-    - [4. Next steps](#4-next-steps)
 
-- [Wannna learn more?](#wanna-learn-more-about-building-real-world-ml-products)
+- [Next steps](#next-steps)
 
 ## The problem
-Training models inside notebooks
+Training models inside notebooks is easy. Unfortunately, this is not enough when you want to build **complete** ML solutions for real-world problems.
 
+In this hands-on tutorial you will learn how to
+- **train** an ML model that predicts crypto prices, and
+- **deploy** this model as a REST API
+
+You will use Serverless ML tools to
+- track experiment runs and publish our best model to the registy, with CometML.
+- deploy the model as a REST API, with Cerebrium.
+
+Without further ado, let's get to work!
 
 ## Lectures
 
@@ -33,10 +41,7 @@ Training models inside notebooks
 
 ### 3. Test API endpoint
 
-### 4. Next steps
-
-## Wanna learn more?
-
+## Next steps
 
 ## TODOs
 - [x] Get data from Coinbase
