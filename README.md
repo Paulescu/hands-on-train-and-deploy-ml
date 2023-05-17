@@ -44,3 +44,11 @@ Training models inside notebooks
 ### 4. Next steps
 
 ## Wanna learn more?
+
+
+## TODOs
+- [x] Get data from Coinbase
+- [x] Transform ts data into supervised ML data
+- [ ] Engineer a few features using technical indicators
+- [ ] Train model
+- [ ] Fine-tune model hyperparameters
