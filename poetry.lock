@@ -1936,6 +1936,20 @@ numpy = "*"
 pandas = "*"
 
 [[package]]
+name = "ta-lib"
+version = "0.4.26"
+description = "Python wrapper for TA-Lib"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "TA-Lib-0.4.26.tar.gz", hash = "sha256:9a1e87ead8990f5c344184e17f268b4f6f50532ea9d40fb7fd161ce5197716da"},
+]
+
+[package.dependencies]
+numpy = "*"
+
+[[package]]
 name = "termcolor"
 version = "2.3.0"
 description = "ANSI color formatting for output in terminal"
@@ -2160,4 +2174,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "35441a8c9bd125aad8519ff8c7ab8223ddb993cf5b9d4431702ef60a4fc3eb2b"
+content-hash = "f6ffb00b589291909cf917fbe5c77c81434022ea5adb5af69c3e5fc37cfd03f9"

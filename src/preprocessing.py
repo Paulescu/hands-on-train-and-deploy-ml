@@ -1,11 +1,16 @@
-from typing import List, Tuple, Optional
+from typing import List, Tuple, Optional, Union
 from pathlib import Path
 
 import pandas as pd
 import numpy as np
 import fire
+import talib
+from sklearn.base import BaseEstimator, TransformerMixin
 
 from src.paths import DATA_DIR
+from src.logger import get_logger
+
+logger = get_logger()
 
 def transform_ts_data_into_features_and_target(
     # ts_data: pd.DataFrame,
@@ -76,6 +81,99 @@ def get_cutoff_indices_features_and_target(
 
     return indices
 
+class BollingerBands(BaseEstimator, TransformerMixin):
+    """
+    Adds Bollinger Bands to the input DataFrame from the `close` prices
+
+    New columns are:
+        - 'bb_upper'
+        - 'bb_lower'
+    """
+    def __init__(self, window: int = 20, window_dev: int = 2):
+        self.window = window
+        self.window_dev = window_dev
+    
+    def fit(self,
+            X: pd.DataFrame,
+            y: Optional[Union[pd.DataFrame, pd.Series]] = None) -> "BollingerBands":
+        """In this scenario, the fit method isn't doing anything. But it must be implemented. This is a scenario of an estimator without parameters."""
+        return self
+
+    def _add_indicator(self, row: pd.Series) -> float:
+
+        # Calculate the moving average
+        sma = talib.SMA(row, timeperiod=self.window)
+
+        # Calculate the standard deviation
+        std = talib.STDDEV(row, timeperiod=self.window)
+
+        # Calculate the upper and lower Bollinger Bands
+        upper_band = sma + self.window_dev * std
+        lower_band = sma - self.window_dev * std
+        
+        return pd.Series([upper_band[-1], lower_band[-1]])
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Compute the Bollinger Bands and add them to the input DataFrame."""
+        logger.info('Adding Bollinger Bands to the input DataFrame')
+        df = X.apply(self._add_indicator, axis=1)
+        df.columns = ['bb_upper', 'bb_lower']
+        X = pd.concat([X, df], axis=1)
+        return X
+
+    def inverse_transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Inverse the log of every cell of the DataFrame."""
+        X.drop(columns=['bb_upper', 'bb_lower'], inplace=True)
+        return X
+
+
+class RSI(BaseEstimator, TransformerMixin):
+    """
+    Adds RSI to the input DataFrame from the `close` prices
+
+    New columns are:
+        - 'rsi'
+    """
+    def __init__(self, window: int = 14):
+        self.window = window
+    
+    def fit(self,
+            X: pd.DataFrame,
+            y: Optional[Union[pd.DataFrame, pd.Series]] = None) -> "RSI":
+        """In this scenario, the fit method isn't doing anything. But it must be implemented. This is a scenario of an estimator without parameters."""
+        return self
+
+    def _add_indicator(self, row: pd.Series) -> float:
+        
+        # Calculate the RSI
+        rsi = talib.RSI(row, timeperiod=self.window)
+        
+        return pd.Series([rsi[-1]])
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Compute the RSI and add it to the input DataFrame."""
+        logger.info('Adding RSI to the input DataFrame')
+        df = X.apply(self._add_indicator, axis=1)
+        df.columns = ['rsi']
+        X = pd.concat([X, df], axis=1)
+        return X
+
+    def inverse_transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Inverse the log of every cell of the DataFrame."""
+        X.drop(columns=['rsi'], inplace=True)
+        return X
+
+
 if __name__ == '__main__':
     
-    fire.Fire(transform_ts_data_into_features_and_target)
+    features, target = fire.Fire(transform_ts_data_into_features_and_target)
+    
+    from sklearn.pipeline import make_pipeline
+    preprocessing_pipeline = make_pipeline(
+        BollingerBands(),
+        RSI()
+    )
+
+    preprocessing_pipeline.fit(features)
+    X = preprocessing_pipeline.transform(features)
+    print(X.head())
