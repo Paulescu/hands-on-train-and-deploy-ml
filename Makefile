@@ -1,4 +1,4 @@
-.PHONY: data
+.PHONY: init data train deploy
 
 init:
 	curl -sSL https://install.python-poetry.org | python3 -
