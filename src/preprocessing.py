@@ -6,11 +6,13 @@ import numpy as np
 import fire
 import talib
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.pipeline import make_pipeline, Pipeline
 
 from src.paths import DATA_DIR
-from src.logger import get_logger
+from src.logger import get_console_logger
+# from src import config
 
-logger = get_logger()
+logger = get_console_logger()
 
 def transform_ts_data_into_features_and_target(
     # ts_data: pd.DataFrame,
@@ -163,16 +165,22 @@ class RSI(BaseEstimator, TransformerMixin):
         X.drop(columns=['rsi'], inplace=True)
         return X
 
+def get_preprocessing_pipeline(
+    bb_window: int = 20,
+    bb_window_dev: int = 2,
+    rsi_window: int = 14
+) -> Pipeline:
+    """Returns the preprocessing pipeline."""
+    return make_pipeline(
+        BollingerBands(bb_window, bb_window_dev),
+        RSI(rsi_window)
+    )
 
 if __name__ == '__main__':
     
     features, target = fire.Fire(transform_ts_data_into_features_and_target)
     
-    from sklearn.pipeline import make_pipeline
-    preprocessing_pipeline = make_pipeline(
-        BollingerBands(),
-        RSI()
-    )
+    preprocessing_pipeline = get_preprocessing_pipeline()
 
     preprocessing_pipeline.fit(features)
     X = preprocessing_pipeline.transform(features)

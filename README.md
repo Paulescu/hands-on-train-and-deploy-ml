@@ -13,6 +13,7 @@
 
 #### Contents
 - [The problem](#the-problem)
+- [Run the whole thing in 5 steps](#run-the-whole-thing-in-5-steps)
 - [Lectures](#lectures)
     - [1. Model training](#1-model-training)
     - [2. Model deployment as REST API](#2-model-deployment-as-rest-api)
@@ -27,11 +28,40 @@ In this hands-on tutorial you will learn how to
 - **train** an ML model that predicts crypto prices, and
 - **deploy** this model as a REST API
 
-You will use Serverless ML tools to
+We will use Serverless ML tools to
 - track experiment runs and publish our best model to the registy, with CometML.
 - deploy the model as a REST API, with Cerebrium.
 
 Without further ado, let's get to work!
+
+## Run the whole thing in 5 steps
+
+1. Create a Python virtual environment with all project dependencies with
+
+    ```
+    $ make init
+    ```
+
+
+2. Set your API keys for [CometML]() and [Cerebrium]() as environment variables.
+    ```
+    $ . ./set_environment_variables.sh
+    ```
+
+3. Download historical data from Coinbase and save it locally to disk
+    ```
+    $ make data
+    ```
+
+4. Train ML model
+    ```
+    $ make train
+    ```
+
+5. Deploy the model
+    ```
+    $ make deploy
+    ```
 
 ## Lectures
 
@@ -46,6 +76,6 @@ Without further ado, let's get to work!
 ## TODOs
 - [x] Get data from Coinbase
 - [x] Transform ts data into supervised ML data
-- [ ] Engineer a few features using technical indicators
+- [x] Engineer a few features using technical indicators
 - [ ] Train model
 - [ ] Fine-tune model hyperparameters

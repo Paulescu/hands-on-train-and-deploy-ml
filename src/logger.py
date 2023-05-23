@@ -1,33 +1,37 @@
 import logging
 
 def get_logger() -> logging.Logger:
-    """Taken from
-    https://www.crowdstrike.com/guides/python-logging/
-
-    Returns:
-        logging.Logger: _description_
-    """
-    logger = logging.getLogger('tutorial')
-
-    # Set our log level
-    logger.setLevel(logging.INFO)
-
-    # create a console handler
-    handler = logging.StreamHandler()
     
-    # set INFO level for handler
-    handler.setLevel(logging.INFO)
+    # Create logger
+    logger = logging.getLogger(name='feature_pipeline')
+    logger.setLevel(logging.DEBUG)
 
-    # Create a message format we want for our logs
+    # Create console handler with formatting
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
 
-    # Add our format to our handler
-    handler.setFormatter(formatter)
+    # Add console handler to the logger
+    logger.addHandler(console_handler)
+
+    return logger
+
+from typing import Optional
+def get_console_logger(name: Optional[str] = 'console_logger') -> logging.Logger:
     
-    # Add our handler to our logger
-    logger.addHandler(handler)
-    
-    #  Emit an INFO-level message
-    logger.info('Python logging is up and running!')
+    # Create logger if it doesn't exist
+    logger = logging.getLogger(name)
+    if not logger.handlers:
+        logger.setLevel(logging.DEBUG)
+
+        # Create console handler with formatting
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+        formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        console_handler.setFormatter(formatter)
+
+        # Add console handler to the logger
+        logger.addHandler(console_handler)
 
     return logger

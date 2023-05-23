@@ -1,0 +1,1 @@
+WINDOW_SIZE = 24
