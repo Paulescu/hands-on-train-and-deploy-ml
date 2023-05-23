@@ -1,7 +1,8 @@
 from typing import Optional
+import os
 
-import fire
 import pandas as pd
+from comet_ml import Experiment
 from sklearn.pipeline import make_pipeline, Pipeline
 from sklearn.metrics import mean_absolute_error
 from xgboost import XGBRegressor
@@ -48,7 +49,12 @@ def train(
     Train a boosting tree model using the input features `X` and targets `y`,
     possibly running hyperparameter tuning.
     """
-    
+    experiment = Experiment(
+        api_key = os.environ["COMET_ML_API_KEY"],
+        project_name = "general",
+        workspace="paulescu"
+    )
+
     # split the data into train and test
     train_sample_size = int(0.9 * len(X))
     X_train, X_test = X[:train_sample_size], X[train_sample_size:]
@@ -60,7 +66,9 @@ def train(
     X_test = X_test[['price_1_hour_ago']]
 
     # baseline model performance
-    logger.info(f'Baseline model error: {get_baseline_model_error(X_test, y_test)}')
+    baseline_mae = get_baseline_model_error(X_test, y_test)
+    logger.info(f'Baseline model error: {baseline_mae}')
+    experiment.log_metrics({'baseline_MAE': baseline_mae})
 
     # pp = get_preprocessing_pipeline()
     # X_train_ = pp.fit_transform(X_train, y_train)
@@ -77,7 +85,7 @@ def train(
         predictions = pipeline.predict(X_test)
         test_error = mean_absolute_error(y_test, predictions)
         logger.info(f'Test error: {test_error}')
-
+        experiment.log_metrics({'test_MAE': test_error})
     else:
         # run hyperparameter tuning
         # TODO

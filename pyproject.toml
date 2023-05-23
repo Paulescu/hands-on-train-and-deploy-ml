@@ -17,6 +17,7 @@ scikit-learn = "^1.2.2"
 ta-lib = "^0.4.26"
 xgboost = "^1.7.5"
 cerebrium = "^0.5.1"
+comet-ml = "^3.33.3"
 
 
 [build-system]
