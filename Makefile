@@ -13,8 +13,7 @@ train:
 	poetry run python src/train.py
 
 prepare-deployment:
-	rm -rf $(DEPLOYMENT_DIR)
-	mkdir $(DEPLOYMENT_DIR)
+	rm -rf $(DEPLOYMENT_DIR) && mkdir $(DEPLOYMENT_DIR)
 	poetry export -f requirements.txt --output $(DEPLOYMENT_DIR)/requirements.txt --without-hashes
 	cp -r src/predict.py $(DEPLOYMENT_DIR)/main.py
 	cp -r src $(DEPLOYMENT_DIR)/src/
