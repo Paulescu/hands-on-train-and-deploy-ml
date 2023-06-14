@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 import fire
-import talib
+import ta
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import make_pipeline, Pipeline
 
@@ -19,7 +19,7 @@ def transform_ts_data_into_features_and_target(
     path_to_input: Optional[Path] = DATA_DIR / 'ohlc_data.parquet',
     input_seq_len: Optional[int] = 24,
     step_size: Optional[int] = 1
-) -> pd.DataFrame:
+) -> Tuple[pd.DataFrame, pd.Series]:
     """
     Slices and transposes data from time-series format into a (features, target)
     format that we can use to train Supervised ML models
@@ -56,6 +56,9 @@ def transform_ts_data_into_features_and_target(
         columns=[f'price_{i+1}_hour_ago' for i in reversed(range(input_seq_len))]
     )
 
+    # add back column with the time
+    # features['time'] = times
+
     # numpy -> pandas
     targets = pd.DataFrame(y, columns=[f'target_price_next_hour'])
 
@@ -83,6 +86,9 @@ def get_cutoff_indices_features_and_target(
 
     return indices
 
+def get_price_columns(X: pd.DataFrame) -> List[str]:
+    """Get the columns of the input DataFrame that contain the price data."""
+    return [col for col in X.columns if 'price' in col]
 class BollingerBands(BaseEstimator, TransformerMixin):
     """
     Adds Bollinger Bands to the input DataFrame from the `close` prices
@@ -118,7 +124,7 @@ class BollingerBands(BaseEstimator, TransformerMixin):
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         """Compute the Bollinger Bands and add them to the input DataFrame."""
         logger.info('Adding Bollinger Bands to the input DataFrame')
-        df = X.apply(self._add_indicator, axis=1)
+        df = X[get_price_columns(X)].apply(self._add_indicator, axis=1)
         df.columns = ['bb_upper', 'bb_lower']
         X = pd.concat([X, df], axis=1)
         return X
@@ -146,16 +152,16 @@ class RSI(BaseEstimator, TransformerMixin):
         return self
 
     def _add_indicator(self, row: pd.Series) -> float:
-        
-        # Calculate the RSI
-        rsi = talib.RSI(row, timeperiod=self.window)
-        
-        return pd.Series([rsi[-1]])
+    
+        # OLD code using talib
+        # import talib
+        # return pd.Series([talib.RSI(row, timeperiod=self.window)[-1]])
+        return pd.Series([ta.momentum.rsi(row, window=self.window)[-1]])
 
     def transform(self, X: pd.DataFrame) -> pd.DataFrame:
         """Compute the RSI and add it to the input DataFrame."""
         logger.info('Adding RSI to the input DataFrame')
-        df = X.apply(self._add_indicator, axis=1)
+        df = X[get_price_columns(X)].apply(self._add_indicator, axis=1)
         df.columns = ['rsi']
         X = pd.concat([X, df], axis=1)
         return X
@@ -172,7 +178,7 @@ def get_preprocessing_pipeline(
 ) -> Pipeline:
     """Returns the preprocessing pipeline."""
     return make_pipeline(
-        BollingerBands(bb_window, bb_window_dev),
+        # BollingerBands(bb_window, bb_window_dev),
         RSI(rsi_window)
     )
 

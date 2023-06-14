@@ -71,11 +71,16 @@ Without further ado, let's get to work!
 
 ### 3. Test API endpoint
 
+### 4. Automation
+
 ## Next steps
 
 ## TODOs
 - [x] Get data from Coinbase
 - [x] Transform ts data into supervised ML data
 - [x] Engineer a few features using technical indicators
-- [ ] Train model
-- [ ] Fine-tune model hyperparameters
+- [x] Train a decent model with linear regression
+- [x] Fix bug when computing tech indicators from raw prices
+- [x] Deploy the model
+- [ ] Optimize model hyper-parameter with out-of-time cross validation use LightGBMRegressor
+

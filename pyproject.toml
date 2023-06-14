@@ -14,10 +14,11 @@ pyarrow = "^12.0.0"
 ta = "^0.10.2"
 notebook = "^6.5.4"
 scikit-learn = "^1.2.2"
-ta-lib = "^0.4.26"
 xgboost = "^1.7.5"
-cerebrium = "^0.5.1"
-comet-ml = "^3.33.3"
+cerebrium = "1.0.2"
+lightgbm = "^3.3.5"
+optuna = "^3.1.1"
+comet-ml = "3.32.3"
 
 
 [build-system]
