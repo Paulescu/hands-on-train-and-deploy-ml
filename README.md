@@ -83,4 +83,5 @@ Without further ado, let's get to work!
 - [x] Fix bug when computing tech indicators from raw prices
 - [x] Deploy the model
 - [ ] Optimize model hyper-parameter with out-of-time cross validation use LightGBMRegressor
+- [ ] Webhooks
 

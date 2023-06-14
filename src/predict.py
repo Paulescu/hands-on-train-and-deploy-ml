@@ -2,10 +2,15 @@ from pydantic import BaseModel
 import pickle
 
 from sklearn.pipeline import Pipeline
-from cerebrium import get_secret
 
-# TODO: remove this line
-COMET_ML_API_KEY = get_secret("COMET_ML_API_KEY")
+try:
+    # this code works when running on Cerebrium
+    from cerebrium import get_secret
+    COMET_ML_API_KEY = get_secret("COMET_ML_API_KEY")
+except ImportError:
+    # this code works when running locally
+    import os
+    COMET_ML_API_KEY = os.environ['COMET_ML_API_KEY']
 
 def load_model_from_registry() -> Pipeline:
     """Loads the model from the remote model registry"""
@@ -14,9 +19,14 @@ def load_model_from_registry() -> Pipeline:
     from comet_ml import API
     api = API(api_key=COMET_ML_API_KEY)
     api.download_registry_model(
-        "paulescu", "linear-model", "1.1.0",
-        output_path='./', expand=True)
-
+        workspace="paulescu",
+        registry_name="linear-model",
+        version='1.1.1',
+        # stage='production',
+        output_path='./',
+        expand=False
+    )
+    
     # load model from local file to memory
     with open('./model.pkl', "rb") as f:
         model = pickle.load(f)

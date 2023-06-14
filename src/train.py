@@ -121,9 +121,6 @@ def train(
     # log model to the registry
     experiment.register_model('linear_model')
 
-    # breakpoint()
-
-
     
 if __name__ == '__main__':
 
