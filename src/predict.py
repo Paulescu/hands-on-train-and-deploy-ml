@@ -1,7 +1,12 @@
 from pydantic import BaseModel
 import pickle
+from comet_ml import API
 
 from sklearn.pipeline import Pipeline
+
+from src.logger import get_console_logger
+
+logger = get_console_logger('deployer')
 
 try:
     # this code works when running on Cerebrium
@@ -15,22 +20,30 @@ except ImportError:
 def load_model_from_registry() -> Pipeline:
     """Loads the model from the remote model registry"""
 
-    # download model from comet ml registry to local file
-    from comet_ml import API
     api = API(api_key=COMET_ML_API_KEY)
+
+    # find model version to deploy
+    model = api.get_model(workspace='paulescu', model_name='linear-model')
+    try:
+        model_version = model.find_versions(status='production')[0]
+    except IndexError as e:
+        logger.error('No production version found for model')
+        raise e
+    
+    # download model from comet ml registry to local file
     api.download_registry_model(
         workspace="paulescu",
         registry_name="linear-model",
-        version='1.1.1',
+        version=model_version,
         # stage='production',
         output_path='./',
-        expand=False
+        expand=True
     )
     
     # load model from local file to memory
     with open('./model.pkl', "rb") as f:
         model = pickle.load(f)
-
+    
     return model
 
 model = load_model_from_registry()

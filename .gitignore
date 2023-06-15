@@ -43,3 +43,7 @@ dask-worker-space/
 # data file
 *.parquet
 *.csv
+
+deployment_dir/
+secret.json
+*.pkl
