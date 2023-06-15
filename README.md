@@ -63,6 +63,10 @@ Without further ado, let's get to work!
     $ make deploy
     ```
 
+6. Test the endpoint works
+    ```
+    $ make test-endpoint
+    ```
 ## Lectures
 
 ### 1. Model training
