@@ -45,7 +45,6 @@ dask-worker-space/
 *.csv
 
 deployment_dir/
-secret.json
 *.pkl
-.set_env_variables.sh
+set_environment_variables.sh
 

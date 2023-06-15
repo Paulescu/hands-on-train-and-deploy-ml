@@ -88,4 +88,5 @@ Without further ado, let's get to work!
 - [x] Deploy the model
 - [ ] Optimize model hyper-parameter with out-of-time cross validation use LightGBMRegressor
 - [ ] Webhooks
-
+    - [ ] Add secrets to GitHub
+    - [ ] Trigger workflow from Comet ML model registry
