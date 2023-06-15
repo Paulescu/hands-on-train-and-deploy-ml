@@ -1,7 +1,17 @@
-import requests
+import os
 import json
 
-url = "https://run.cerebrium.ai/v2/p-94ad0fb9/eth-price-1-hour-predictor/predict"
+import requests
+
+from src.logger import get_console_logger
+
+logger = get_console_logger(__name__)
+
+try:
+    url = os.environ['CEREBRIUM_ENDPOINT_URL']
+except KeyError as e:
+    logger.error('You need to specify the env variables CEREBRIUM_ENDPOINT_URL in your set_env_variables.sh script')
+    raise e
 
 payload = json.dumps({
     'price_24_hour_ago': 46656.851562,

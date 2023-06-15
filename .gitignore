@@ -47,3 +47,5 @@ dask-worker-space/
 deployment_dir/
 secret.json
 *.pkl
+.set_env_variables.sh
+

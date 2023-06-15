@@ -1,9 +1,10 @@
 from pydantic import BaseModel
 import pickle
-from comet_ml import API
 
-from sklearn.pipeline import Pipeline
+# from comet_ml import API
+# from sklearn.pipeline import Pipeline
 
+from src.model_registry_api import load_production_model_from_registry
 from src.logger import get_console_logger
 
 logger = get_console_logger('deployer')
@@ -11,42 +12,22 @@ logger = get_console_logger('deployer')
 try:
     # this code works when running on Cerebrium
     from cerebrium import get_secret
+    COMET_ML_WORKSPACE = get_secret("COMET_ML_WORKSPACE")
     COMET_ML_API_KEY = get_secret("COMET_ML_API_KEY")
+    COMET_ML_MODEL_NAME = get_secret("COMET_ML_MODEL_NAME")
+
 except ImportError:
     # this code works when running locally
     import os
+    COMET_ML_WORKSPACE = os.environ['COMET_ML_WORKSPACE']
     COMET_ML_API_KEY = os.environ['COMET_ML_API_KEY']
+    COMET_ML_MODEL_NAME = os.environ['COMET_ML_MODEL_NAME']
 
-def load_model_from_registry() -> Pipeline:
-    """Loads the model from the remote model registry"""
-
-    api = API(api_key=COMET_ML_API_KEY)
-
-    # find model version to deploy
-    model = api.get_model(workspace='paulescu', model_name='linear-model')
-    try:
-        model_version = model.find_versions(status='production')[0]
-    except IndexError as e:
-        logger.error('No production version found for model')
-        raise e
-    
-    # download model from comet ml registry to local file
-    api.download_registry_model(
-        workspace="paulescu",
-        registry_name="linear-model",
-        version=model_version,
-        # stage='production',
-        output_path='./',
-        expand=True
-    )
-    
-    # load model from local file to memory
-    with open('./model.pkl', "rb") as f:
-        model = pickle.load(f)
-    
-    return model
-
-model = load_model_from_registry()
+model = load_production_model_from_registry(
+    workspace=COMET_ML_WORKSPACE,
+    api_key=COMET_ML_API_KEY,
+    model_name=COMET_ML_MODEL_NAME,
+)
 
 class Item(BaseModel):
     price_24_hour_ago: float
