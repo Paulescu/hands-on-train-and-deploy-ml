@@ -1,0 +1,13 @@
+name: Deploy REST API to Production
+run-name: Deploymeny run - ${{ github.actor }}
+on:
+  repository_dispatch:
+    types: [webhook_Production]
+
+jobs:
+  Webhook-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "A user has requested to promote model version ${{ github.event.client_payload.version }} to ${{ github.event.client_payload.status }}."
+      - run: echo "Registry - ${{ github.event.client_payload.registryModelName }}" 
+      - run: echo "Workspace - ${{ github.event.client_payload.workspaceName }}"

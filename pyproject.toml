@@ -18,7 +18,7 @@ xgboost = "^1.7.5"
 cerebrium = "1.0.2"
 lightgbm = "^3.3.5"
 optuna = "^3.1.1"
-comet-ml = "3.32.3"
+comet-ml = "3.32.6"
 
 
 [build-system]

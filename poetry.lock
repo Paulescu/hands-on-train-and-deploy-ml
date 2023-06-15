@@ -610,17 +610,17 @@ development = ["black", "flake8", "mypy", "pytest", "types-colorama"]
 
 [[package]]
 name = "comet-ml"
-version = "3.32.3"
+version = "3.32.6"
 description = "Supercharging Machine Learning"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "comet_ml-3.32.3-py3-none-any.whl", hash = "sha256:a9943d349352681ebf154186721047ba3a59d7fed5fa4ce44c3fde99a01c0bba"},
+    {file = "comet_ml-3.32.6-py3-none-any.whl", hash = "sha256:c5b697a0bc1d27dff49a834a34fec4a3c8163827c7f2fd519b2bee03d84e8a01"},
 ]
 
 [package.dependencies]
 dulwich = {version = ">=0.20.6,<0.20.33 || >0.20.33", markers = "python_version >= \"3.0\""}
-everett = {version = ">=1.0.1", extras = ["ini"], markers = "python_version > \"3.5\""}
+everett = {version = ">=1.0.1,<3.2.0", extras = ["ini"], markers = "python_version > \"3.5\""}
 jsonschema = ">=2.6.0,<3.1.0 || >3.1.0"
 python-box = "<7.0.0"
 requests = ">=2.18.4"
@@ -860,13 +860,13 @@ pgp = ["gpg"]
 
 [[package]]
 name = "everett"
-version = "3.2.0"
+version = "3.1.0"
 description = "Configuration library for Python applications"
 optional = false
 python-versions = "*"
 files = [
-    {file = "everett-3.2.0-py2.py3-none-any.whl", hash = "sha256:80517946d9746734ff8e6bda56d629f0092083389730c72157745f8d5d43d196"},
-    {file = "everett-3.2.0.tar.gz", hash = "sha256:cdca5fc8815f402df650444eb1a2fa24c05ef524ff3ebbae3310d17edb11ea6a"},
+    {file = "everett-3.1.0-py2.py3-none-any.whl", hash = "sha256:db13891b849e45e54faea93ee79881d12458c5378f5b9b7f806eeff03ce1de3c"},
+    {file = "everett-3.1.0.tar.gz", hash = "sha256:46175da5bcb06c193aa129e59714bca981344ff067c3a8bc2e625bc0b3dc01f6"},
 ]
 
 [package.dependencies]
@@ -4078,4 +4078,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "be6892aec7d54c7281eb91dcde2e6c1555632e74dbdbe9580cb2bf73ff6a1c38"
+content-hash = "0f1236ced4ad3934dfa21cb6dcd69a30ecca1229eb31e15426c225c08b6b90a5"
