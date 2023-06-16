@@ -1,23 +1,16 @@
 name: Deploy REST API to Production
-run-name: Deploymeny run - ${{ github.actor }}
+run-name: Deployment run - ${{ github.actor }}
 on:
   repository_dispatch:
     types: [webhook_Production]
 
 env:
-    PYTHON_VERSION: 3.10.0
-    POETRY_VERSION: 1.5.1
+    PYTHON_VERSION: 3.9
+    POETRY_VERSION: 1.4.2
     POETRY_URL: https://install.python-poetry.org
       
-jobs:
-#   Webhook-Test:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: echo "A user has requested to promote model version ${{ github.event.client_payload.version }} to ${{ github.event.client_payload.status }}."
-#       - run: echo "Registry - ${{ github.event.client_payload.registryModelName }}" 
-#       - run: echo "Workspace - ${{ github.event.client_payload.workspaceName }}"
-    
-    deploy:
+jobs:    
+    deploy-rest-api-prod:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -39,7 +32,7 @@ jobs:
                 key: poetry-${{ runner.os }}-${{ env.PYTHON_VERSION }}-${{ hashFiles('**/poetry.lock') }}-${{ hashFiles('.github/workflows/*.yml') }}
             
             - name: Set up Python ${{ env.PYTHON_VERSION }}
-              uses: actions/setup-python@v4
+              uses: actions/setup-python@v3
               with:
                 python-version: ${{ env.PYTHON_VERSION }}
             

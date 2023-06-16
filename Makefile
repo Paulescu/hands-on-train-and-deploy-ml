@@ -17,7 +17,7 @@ prepare-deployment:
 	poetry export -f requirements.txt --output $(DEPLOYMENT_DIR)/requirements.txt --without-hashes
 	cp -r src/predict.py $(DEPLOYMENT_DIR)/main.py
 	cp -r src $(DEPLOYMENT_DIR)/src/
-	pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
+	# pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
 	
 deploy: prepare-deployment
 	cd $(DEPLOYMENT_DIR) && poetry run cerebrium deploy eth-price-1-hour-predictor $(CEREBRIUM_API_KEY) --hardware CPU

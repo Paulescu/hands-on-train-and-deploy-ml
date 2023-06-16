@@ -1,8 +1,4 @@
 from pydantic import BaseModel
-import pickle
-
-# from comet_ml import API
-# from sklearn.pipeline import Pipeline
 
 from src.model_registry_api import load_production_model_from_registry
 from src.logger import get_console_logger

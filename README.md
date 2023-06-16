@@ -85,8 +85,8 @@ Without further ado, let's get to work!
 - [x] Engineer a few features using technical indicators
 - [x] Train a decent model with linear regression
 - [x] Fix bug when computing tech indicators from raw prices
-- [x] Deploy the model
-- [ ] Optimize model hyper-parameter with out-of-time cross validation use LightGBMRegressor
-- [ ] Webhooks
-    - [ ] Add secrets to GitHub
-    - [ ] Trigger workflow from Comet ML model registry
+- [x] Deploy the modelLightGBMRegressor
+- [x] Webhooks
+    - [x] Add secrets to GitHub
+    - [x] Trigger workflow from Comet ML model registry
+- [ ] Optimize model hyper-parameter with out-of-time cross validation use 

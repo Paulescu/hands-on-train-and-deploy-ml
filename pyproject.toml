@@ -15,10 +15,10 @@ ta = "^0.10.2"
 notebook = "^6.5.4"
 scikit-learn = "^1.2.2"
 xgboost = "^1.7.5"
-cerebrium = "1.0.2"
 lightgbm = "^3.3.5"
 optuna = "^3.1.1"
 comet-ml = "3.32.6"
+cerebrium = "^1.1.1"
 
 
 [build-system]
