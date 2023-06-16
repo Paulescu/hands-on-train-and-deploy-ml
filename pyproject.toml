@@ -19,6 +19,7 @@ lightgbm = "^3.3.5"
 optuna = "^3.1.1"
 comet-ml = "3.32.6"
 cerebrium = "^1.1.1"
+torch = "1.13.1"
 
 
 [build-system]
