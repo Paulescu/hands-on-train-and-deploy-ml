@@ -3,6 +3,8 @@ run-name: Deployment run - ${{ github.actor }}
 on:
   repository_dispatch:
     types: [webhook_Production]
+  
+  workflow_dispatch:
 
 env:
     PYTHON_VERSION: 3.9
@@ -13,6 +15,7 @@ jobs:
     deploy-rest-api-prod:
         runs-on: ubuntu-latest
         steps:
+
             - name: Checkout
               uses: actions/checkout@v3
         
@@ -44,12 +47,12 @@ jobs:
             - name: Install Dependencies
               run: poetry install
             
-            - name: Install CUDA toolkit
-              uses: Jimver/cuda-toolkit@v0.2.10
-              id: cuda-toolkit
-              with:
-                cuda: '12.1.0'
-
+            # - name: Install CUDA toolkit
+            #   uses: Jimver/cuda-toolkit@v0.2.10
+            #   id: cuda-toolkit
+            #   with:
+            #     cuda: '12.1.0'
+            
             - name: Deploy endpoint to Cerebrium
               env: 
                 COMET_ML_API_KEY: ${{ secrets.COMET_ML_API_KEY }}
