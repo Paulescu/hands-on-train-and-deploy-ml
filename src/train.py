@@ -55,6 +55,16 @@ def get_preprocessing_and_model_pipeline(
         LinearRegression(**model_hyperparams)
     )
 
+from typing import Tuple, Dict
+def find_best_hyperparams(
+    X: pd.DataFrame, y: pd.Series, parent_experiment_id: str
+) -> Tuple[Dict, Dict]:
+    """"""
+    raise NotImplemented('TODO')
+    breakpoint()
+    pass
+
+
 def train(
     X: pd.DataFrame,
     y: pd.Series,
@@ -76,28 +86,27 @@ def train(
     logger.info(f'Train sample size: {len(X_train)}')
     logger.info(f'Test sample size: {len(X_test)}')
 
-    # X_train = X_train[['price_1_hour_ago']]
-    # X_test = X_test[['price_1_hour_ago']]
-    # breakpoint()
-
     # baseline model performance
     baseline_mae = get_baseline_model_error(X_test, y_test)
     logger.info(f'Baseline model error: {baseline_mae}')
     experiment.log_metrics({'baseline_MAE': baseline_mae})
 
-    # create the full pipeline with default hyperparameters
-    pipeline = get_preprocessing_and_model_pipeline(
-        preprocessing_hyperparams={},
-        model_hyperparams={}
-    )
-
     if not tune_hyperparams:
+        # create the full pipeline with default hyperparameters
+        pipeline = get_preprocessing_and_model_pipeline(
+            preprocessing_hyperparams={},
+            model_hyperparams={}
+        )
+
         # fit the pipeline
         logger.info('Fitting model with default hyperparameters')
         pipeline.fit(X_train, y_train)
     else:
         # run hyperparameter tuning
-        # TODO
+        best_preprocessing_hyperparams, best_model_hyperparams = \
+            find_best_hyperparams(X_train, y_train, parent_experiment_id=1)
+
+        pipeline = get_preprocessing_and_model_pipeline()
         raise NotImplementedError('Hyperparameter tuning is not implemented yet')
 
     # breakpoint()
@@ -128,4 +137,4 @@ if __name__ == '__main__':
     features, target = transform_ts_data_into_features_and_target()
 
     logger.info('Training model')
-    train(features, target)
+    train(features, target, tune_hyperparams=False)

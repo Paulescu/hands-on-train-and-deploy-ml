@@ -34,7 +34,7 @@ We will use Serverless ML tools to
 
 Without further ado, let's get to work!
 
-## Run the whole thing in 5 steps
+## Run the whole thing in 7 steps
 
 1. Create a Python virtual environment with all project dependencies with
 
@@ -43,7 +43,7 @@ Without further ado, let's get to work!
     ```
 
 
-2. Set your API keys for [CometML]() and [Cerebrium]() as environment variables.
+2. Set your API keys for [CometML]() and [Cerebrium]() in `set_environment_variables_template.sh`, rename the file and run (you can skip `CEREBRIUM_ENDPOINT_URL` for now)
     ```
     $ . ./set_environment_variables.sh
     ```
@@ -63,7 +63,12 @@ Without further ado, let's get to work!
     $ make deploy
     ```
 
-6. Test the endpoint works
+6. Take the endpoint URL you get from Cerebrim in the previous step, and set the `CEREBRIUM_ENDPOINT_URL` variable in `set_environment_variables.sh`. Then re-run
+    ```
+    $ . ./set_environment_variables.sh
+    ```
+
+7. Test the endpoint works
     ```
     $ make test-endpoint
     ```
@@ -73,11 +78,8 @@ Without further ado, let's get to work!
 
 ### 2. Model deployment as REST API
 
-### 3. Test API endpoint
+### 3. Automatic deployments from the Model Registry
 
-### 4. Automation
-
-## Next steps
 
 ## TODOs
 - [x] Get data from Coinbase
