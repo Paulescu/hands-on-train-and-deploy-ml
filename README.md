@@ -90,6 +90,8 @@ In this lecture you won't train an ML model that will make you rich. But you wil
 
 Ready to get your hands-dirty? **[Start training models 👩‍💻👨🏽‍💻 🏋️](./lectures/01_model_training.md)**
 
+<br>
+
 ### 2. Model deployment as REST API 🚀
 
 In this second lecture you will
@@ -100,6 +102,7 @@ In this second lecture you will
 
 Ready to deploy? **[Start deploying models 👩‍💻👨🏽‍💻 🚀](./lectures/02_model_deployment.md)**
 
+<br>
 
 ### 3. Automatic deployments with GitHub actions and Model Registry webhooks 🪝
 
