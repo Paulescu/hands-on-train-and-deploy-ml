@@ -29,6 +29,8 @@ Training models inside notebooks is easy. Unfortunately, this is not enough when
 
 With this hands-on tutorial I want to help you grow as an ML engineer, and go beyond notebooks.
 
+<br>
+
 ## This is what you will learn 🎓
 
 You will learn to
@@ -37,6 +39,8 @@ You will learn to
 - **automate** safe deployments, using GitHub actions and Comet ML Model Registry.
 
 Without further ado, let's get to work!
+
+<br>
 
 ## Run the whole thing in 5 minutes 🕐
 
@@ -78,6 +82,8 @@ If you only have 5 minutes and want to see the whole system in action, follow th
     ```
     $ make test-endpoint
     ```
+<br>
+
 ## Lectures 🎬
 
 ### 1. Model training 🏋️
@@ -118,6 +124,7 @@ In this third and final lecture you will
 
 Ready for the final round? **[Start automating safe deployments 👩‍💻👨🏽‍💻 🪝](./lectures/03_continuous_deployment_with_webhooks.md)**
 
+<br>
 
 ## Wanna learn more Real-Time ML? ⚡
 
