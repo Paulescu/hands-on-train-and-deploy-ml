@@ -6,6 +6,8 @@
     <i><a href="https://www.comet.com/site/">CometML</a></i> + <i><a href="https://www.cerebrium.ai/">Cerebrium</a></i> = 🚀
 </div>
 
+<br>
+
 <p align="center">
   <img src="images/lecture_3.gif" width='500' />
 </p>
