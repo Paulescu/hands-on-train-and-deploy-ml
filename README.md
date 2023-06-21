@@ -110,7 +110,7 @@ In this third and final lecture you will
 - build a continuous deployment pipeline using GitHub actions
 - create a webhook to trigger deployments from the Model Registry.
 
-Ready for the final round? **[Start automating safe deployments 👩‍💻👨🏽‍💻 🪝](./lectures/02_model_deployment.md)**
+Ready for the final round? **[Start automating safe deployments 👩‍💻👨🏽‍💻 🪝](./lectures/03_continuous_deployment_with_webhooks.md)**
 
 
 ## Wanna learn more Real-Time ML? ⚡
