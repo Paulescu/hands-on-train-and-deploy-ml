@@ -47,4 +47,4 @@ dask-worker-space/
 deployment_dir/
 *.pkl
 set_environment_variables.sh
-
+.links

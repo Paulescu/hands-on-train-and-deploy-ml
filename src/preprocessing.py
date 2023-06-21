@@ -7,6 +7,7 @@ import fire
 import ta
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import make_pipeline, Pipeline
+from sklearn.preprocessing import FunctionTransformer
 
 from src.paths import DATA_DIR
 from src.logger import get_console_logger
@@ -121,10 +122,29 @@ class RSI(BaseEstimator, TransformerMixin):
         X.drop(columns=['rsi'], inplace=True)
         return X
 
-def get_preprocessing_pipeline(rsi_window: int = 14) -> Pipeline:
+def get_price_percentage_return(X: pd.DataFrame, hours: int) -> pd.DataFrame:
+    """Add the price return of the last `hours` to the input DataFrame."""
+    X[f'percentage_return_{hours}_hour'] = \
+        (X['price_1_hour_ago'] - X[f'price_{hours}_hour_ago'])/ X[f'price_{hours}_hour_ago']
+    return X
+
+def get_subset_of_features(X: pd.DataFrame) -> pd.DataFrame:
+    return X[['price_1_hour_ago', 'percentage_return_2_hour', 'percentage_return_24_hour', 'rsi']]
+
+def get_preprocessing_pipeline(
+    pp_rsi_window: int = 14
+) -> Pipeline:
     """Returns the preprocessing pipeline."""
     return make_pipeline(
-        RSI(rsi_window)
+        # trends
+        FunctionTransformer(get_price_percentage_return, kw_args={'hours': 2}),
+        FunctionTransformer(get_price_percentage_return, kw_args={'hours': 24}),
+
+        # momentum
+        RSI(pp_rsi_window),
+
+        # select columns
+        FunctionTransformer(get_subset_of_features)
     )
 
 if __name__ == '__main__':

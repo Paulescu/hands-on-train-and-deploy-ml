@@ -13,7 +13,7 @@ logger = get_console_logger(name='dataset_generation')
 def download_ohlc_data_from_coinbase(
     product_id: Optional[str] = "BTC-USD",
     from_day: Optional[str] = "2022-01-01",
-    to_day: Optional[str] = "2023-05-01",
+    to_day: Optional[str] = "2023-06-01",
 ) -> Path:
     """
     Downloads historical candles from Coinbase API and saves data to disk

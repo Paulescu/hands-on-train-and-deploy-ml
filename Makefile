@@ -1,4 +1,4 @@
-.PHONY: init data train deploy prepare-deployment test-endpoint
+.PHONY: init data baseline train deploy prepare-deployment test-endpoint
 
 DEPLOYMENT_DIR = deployment_dir
 
@@ -8,6 +8,9 @@ init:
 	
 data:
 	poetry run python src/data.py
+
+baseline:
+	poetry run python src/baseline_model.py
 
 train:
 	poetry run python src/train.py
