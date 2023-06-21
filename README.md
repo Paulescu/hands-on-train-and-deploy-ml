@@ -9,25 +9,24 @@
   <img src="images/lecture_3.gif" width='500' />
 </p>
 
-
 #### Contents
-- [The problem](#the-problem)
-- [This is what you will learn](#this-is-what-you-will-learn)
-- [Run the whole thing in 5 minutes](#run-the-whole-thing-in-5-minutes)
-- [Lectures](#lectures)
-    - [1. Model training](#1-model-training)
-    - [2. Model deployment as REST API](#2-model-deployment-as-rest-api)
-    - [3. Automation with GitHub actions and the Model Registry](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks)
+- [The problem ⛰️](#the-problem-⛰️)
+- [This is what you will learn 🎓](#this-is-what-you-will-learn-🎓)
+- [Run the whole thing in 5 minutes 🕐](#run-the-whole-thing-in-5-minutes)
+- [Lectures 🎬](#lectures)
+    - [1. Model training 🏋️](#1-model-training-🏋️)
+    - [2. Model deployment as REST API 🚀](#2-model-deployment-as-rest-api-🚀)
+    - [3. Automation with GitHub actions and the Model Registry 🪝](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks-🪝)
 
-- [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
+- [Wanna learn more real-time ML? ⚡](#wanna-learn-more-real-time-ml-⚡)
 
-## The problem
+## The problem ⛰️
 
 Training models inside notebooks is easy. Unfortunately, this is not enough when you want to build real-world ML products.
 
 With this hands-on tutorial I want to help you grow as an ML engineer, and go beyond notebooks.
 
-## This is what you will learn
+## This is what you will learn 🎓
 
 You will learn to
 - **train** an ML model prototype through careful experimentation, using [CometML](https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github).
@@ -36,7 +35,7 @@ You will learn to
 
 Without further ado, let's get to work!
 
-## Run the whole thing in 5 minutes
+## Run the whole thing in 5 minutes 🕐
 
 If you only have 5 minutes and want to see the whole system in action, follow these steps:
 
@@ -76,9 +75,9 @@ If you only have 5 minutes and want to see the whole system in action, follow th
     ```
     $ make test-endpoint
     ```
-## Lectures
+## Lectures 🎬
 
-### [1. Model training](./lectures/01_model_training.md)
+### 1. Model training 🏋️
 
 In this first lecture you will
 
@@ -91,7 +90,7 @@ In this lecture you won't train an ML model that will make you rich. But you wil
 
 Ready to get your hands-dirty? **[Start training models 👩‍💻👨🏽‍💻 🏋️](./lectures/01_model_training.md)**
 
-### [2. Model deployment as REST API](./lectures/02_model_deployment.md)
+### 2. Model deployment as REST API 🚀
 
 In this second lecture you will
 
@@ -102,7 +101,7 @@ In this second lecture you will
 Ready to deploy? **[Start deploying models 👩‍💻👨🏽‍💻 🚀](./lectures/02_model_deployment.md)**
 
 
-### [3. Automatic deployments with GitHub actions and Model Registry webhooks](./lectures/03_continuous_deployment_from_model_registry.md)
+### 3. Automatic deployments with GitHub actions and Model Registry webhooks 🪝
 
 ML models often need to be re-trained to keep them performant. Hence, automating safe deployments is a must.
 
@@ -111,10 +110,10 @@ In this third and final lecture you will
 - build a continuous deployment pipeline using GitHub actions
 - create a webhook to trigger deployments from the Model Registry.
 
-Ready for the final round? **[Start automating safe deployments 👩‍💻👨🏽‍💻 🏆](./lectures/02_model_deployment.md)**
+Ready for the final round? **[Start automating safe deployments 👩‍💻👨🏽‍💻 🪝](./lectures/02_model_deployment.md)**
 
 
-## Wanna learn more Real-Time ML?
+## Wanna learn more Real-Time ML? ⚡
 
 Wanna learn to build a complete ML system that
 
