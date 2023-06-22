@@ -15,12 +15,11 @@
 #### Contents
 * [The problem](#the-problem)
 * [This is what you will learn](#this-is-what-you-will-learn)
-* [Run the whole thing in 5 minutes 🕐](#run-the-whole-thing-in-5-minutes)
+* [Run the whole thing in 5 minutes](#run-the-whole-thing-in-5-minutes)
 * [Lectures 🎬](#lectures)
     * [1. Model training 🏋️](#1-model-training)
     * [2. Model deployment as REST API 🚀](#2-model-deployment-as-rest-api)
     * [3. Automation with GitHub actions and the Model Registry 🪝](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks)
-
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
 
 ## The problem
