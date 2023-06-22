@@ -20,7 +20,7 @@
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=jPxev6DpXPY">
-    <img src="../images/video_1.png" alt="Introduction Video" style="width:100%;">
+    <img src="../images/video_1.png" alt="Create virtual environment with Poetry" style="width:75%;">
   </a>
 </div>
 
