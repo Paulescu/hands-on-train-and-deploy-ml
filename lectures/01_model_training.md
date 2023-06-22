@@ -16,7 +16,7 @@
 4. [Build Machine Learning models](#4-build-machine-learning-models)
 
 
-## 1. Create virtual environment with Poetry
+## 1. Create virtual environment with [Poetry](https://python-poetry.org/docs/)
 
 [PENDING VIDEO 🎬]
 <!-- <div align="center">
