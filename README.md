@@ -3,7 +3,7 @@
     <h1>Train and Deploy a Real-Time ML model</h1>
     <h2>to predict crypto prices</h2>
     <!-- <i>by Pau Labarta Bajo</i> -->
-    <i><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai/](https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a></i> = 🚀
+    <i><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a></i> = 🚀
 </div>
 
 <br>
