@@ -18,12 +18,11 @@
 
 ## 1. Create virtual environment with [Poetry](https://python-poetry.org/docs/)
 
-[PENDING VIDEO 🎬]
-<!-- <div align="center">
-  <a href="https://www.youtube.com/watch?v=XgywWwRXU70">
-    <img src="../images/video_thumbnail.png" alt="Introduction Video" style="width:100%;">
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=jPxev6DpXPY">
+    <img src="../images/video_1.png" alt="Introduction Video" style="width:100%;">
   </a>
-</div> -->
+</div>
 
 <br>
 
