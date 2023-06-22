@@ -3,7 +3,7 @@
     <h1>Train and Deploy a Real-Time ML model</h1>
     <h2>to predict crypto prices</h2>
     <!-- <i>by Pau Labarta Bajo</i> -->
-    <i><a href="https://www.comet.com/site/">CometML</a></i> + <i><a href="https://www.cerebrium.ai/">Cerebrium</a></i> = 🚀
+    <i><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai/](https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a></i> = 🚀
 </div>
 
 <br>
@@ -26,7 +26,7 @@
 
 Training models inside notebooks is easy. Unfortunately, this is not enough when you want to build real-world ML products.
 
-With this hands-on tutorial I want to help you grow as an ML engineer, and go beyond notebooks.
+With this hands-on tutorial, I want to help you grow as an ML engineer and go beyond notebooks.
 
 <br>
 
