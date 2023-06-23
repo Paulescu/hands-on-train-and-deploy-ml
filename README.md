@@ -24,7 +24,9 @@
 
 ## The problem
 
-Training models inside notebooks is easy. Unfortunately, this is not enough when you want to build real-world ML products.
+Predicting crypto price movements is extremely hard. But it is also a great field to show what Machine Learning has to offer.
+
+In this tutorial you won't build an ML system that will make you rich. But you will master the MLOps frameworks and tools you need to build ML systems that, together with tons of experimentation, can take you there.
 
 With this hands-on tutorial, I want to help you grow as an ML engineer and go beyond notebooks.
 
