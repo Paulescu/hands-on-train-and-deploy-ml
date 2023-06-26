@@ -16,10 +16,10 @@
 4. [Build Machine Learning models](#4-build-machine-learning-models)
 
 
-## 1. Create virtual environment with [Poetry](https://python-poetry.org/docs/)
+## 1. Create a virtual environment with [Poetry](https://python-poetry.org/docs/)
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=jPxev6DpXPY">
+  <a href="https://www.youtube.com/watch?v=xLtP7zSJwvE">
     <img src="../images/video_1.png" alt="Create virtual environment with Poetry" style="width:75%;">
   </a>
 </div>
