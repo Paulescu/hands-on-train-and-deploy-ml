@@ -10,7 +10,7 @@
 </p>
 
 #### Steps
-1. [Create virtual environment with Poetry](#1-create-virtual-environment-with-poetry)
+1. [Create a virtual environment with Poetry](#1-create-a-virtual-environment-with-poetry)
 2. [Generate training data](#2-generate-training-data)
 3. [Build a baseline model](#3-build-a-baseline-model)
 4. [Build Machine Learning models](#4-build-machine-learning-models)
