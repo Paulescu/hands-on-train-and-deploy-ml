@@ -10,16 +10,18 @@
 </p>
 
 #### Steps
-1. [Create a virtual environment with Poetry](#1-create-a-virtual-environment-with-poetry)
+
+1. [Create the virtual environment with Poetry](#1-create-the-virtual-environment-with-poetry)
 2. [Generate training data](#2-generate-training-data)
 3. [Build a baseline model](#3-build-a-baseline-model)
 4. [Build Machine Learning models](#4-build-machine-learning-models)
 
 
-## 1. Create a virtual environment with [Poetry](https://python-poetry.org/docs/)
+## 1. Create the virtual environment with [Poetry](https://python-poetry.org/docs/)
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=xLtP7zSJwvE">
+      <p>Watch the video 🎬</p>
     <img src="../images/video_1.png" alt="Create virtual environment with Poetry" style="width:75%;">
   </a>
 </div>
@@ -52,7 +54,13 @@ Your local development environment is ready. Let's now generate some training da
 
 ## 2. Generate training data
 
-[PENDING VIDEO 🎬]
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=u6dFm85hXK4">
+    <p>Watch the video 🎬</p>
+    <img src="../images/02_video_cover.png" alt="Create virtual environment with Poetry" style="width:75%;">
+  </a>
+</div>
+
 
 Download historical data from Coinbase and save it locally to disk
 

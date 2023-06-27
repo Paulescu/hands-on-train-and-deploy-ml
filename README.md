@@ -16,10 +16,15 @@
 * [The problem](#the-problem)
 * [This is what you will learn](#this-is-what-you-will-learn)
 * [Run the whole thing in 5 minutes](#run-the-whole-thing-in-5-minutes)
-* [Lectures 🎬](#lectures)
-    * [1. Model training 🏋️](#1-model-training)
-    * [2. Model deployment as REST API 🚀](#2-model-deployment-as-rest-api)
-    * [3. Automation with GitHub actions and the Model Registry 🪝](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks)
+
+* [Part 1. Model training 🏋️](#1-model-training)
+    * [Step 1. Create your virtual environment](./lectures/01_model_training.md#1-create-a-virtual-environment-with-poetry)
+    * [Step 2. Generate training data](./lectures/01_model_training.md#2-generate-training-data)
+    * [Step 3. Build a baseline model](./lectures/01_model_training.md#3-build-a-baseline-model)
+    * [Step 4. Build Machine Learning models](./lectures/01_model_training.md/#4-build-machine-learning-models)
+
+* [Part 2. Model deployment as REST API 🚀](#2-model-deployment-as-rest-api)
+* [Part 3. Automation with GitHub actions and the Model Registry 🪝](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks)
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
 
 ## The problem
