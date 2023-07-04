@@ -69,7 +69,13 @@ Download historical data from Coinbase and save it locally to disk
 
 ## 3. Build a baseline model
 
-[PENDING VIDEO 🎬]
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=kOrmsVFlXkI">
+    <p>Watch the video 🎬</p>
+    <img src="../images/03_video_cover.png" alt="Create a simple, yet powerful, baseline model" style="width:75%;">
+  </a>
+</div>
+
 
 - Establish a baseline performance using a very dummy (yet powerful) baseline model
     ```
