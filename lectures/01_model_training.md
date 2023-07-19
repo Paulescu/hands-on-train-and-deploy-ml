@@ -84,7 +84,12 @@ Download historical data from Coinbase and save it locally to disk
 
 ## 4. Build Machine Learning models
 
-[PENDING VIDEO 🎬]
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=Sx7k0iDqy9I">
+    <p>Watch the video 🎬</p>
+    <img src="../images/04_video_cover.png" alt="Create a simple, yet powerful, baseline model" style="width:75%;">
+  </a>
+</div>
 
 - Here is the list of experiments I ran
     ```
