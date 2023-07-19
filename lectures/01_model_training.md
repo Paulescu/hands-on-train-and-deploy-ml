@@ -1,12 +1,14 @@
 <div align="center">
-    <h1>Lecture 1. Model training</h1>
-    <i>Model experimentation with <a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">Comet ML </a></i>
+    <h1>Lecture 1</h1>
+    <h1>Model training and experimentation with <a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">Comet ML </a></h1>
 </div>
 
 <br />
 
 <p align="center">
-  <img src="../images/lecture_1.gif" width='500' />
+    <a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">
+    <img src="../images/lecture_1.gif" width='750' />
+    </a>
 </p>
 
 #### Steps
