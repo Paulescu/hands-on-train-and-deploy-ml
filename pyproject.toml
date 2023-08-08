@@ -20,6 +20,7 @@ optuna = "^3.1.1"
 comet-ml = "3.32.6"
 cerebrium = "^1.1.1"
 torch = "1.13.1"
+pydantic = "^2.1.1"
 
 
 [build-system]

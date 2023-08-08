@@ -23,7 +23,7 @@ prepare-deployment:
 	# pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
 	
 deploy: prepare-deployment
-	cd $(DEPLOYMENT_DIR) && poetry run cerebrium deploy eth-price-1-hour-predictor $(CEREBRIUM_API_KEY) --hardware CPU
+	cd $(DEPLOYMENT_DIR) && poetry run cerebrium deploy --api-key $(CEREBRIUM_API_KEY) --hardware CPU eth-price-1-hour-predictor
 
 test-endpoint:
 	poetry run python src/test_endpoint.py
