@@ -20,8 +20,9 @@
     * [Step 1. Create your virtual environment](./lectures/01_model_training.md#1-create-the-virtual-environment-with-poetry)
     * [Step 2. Generate training data](./lectures/01_model_training.md#2-generate-training-data)
     * [Step 3. Build a baseline model](./lectures/01_model_training.md#3-build-a-baseline-model)
-    * [Step 4. Build Machine Learning models](./lectures/01_model_training.md/#4-build-machine-learning-models)
+    * [Step 4. Build Machine Learning models](./lectures/01_model_training.md#4-build-machine-learning-models)
 * [Part 2. Model deployment as REST API 🚀](#2-model-deployment-as-rest-api)
+    * [Step 5. Deploy the model as a Serverless REST API](./lectures/02_model_deployment.md#5-deploy-the-model-as-a-serverless-rest-api)
 * [Part 3. Automation with GitHub actions and the Model Registry 🪝](#3-automatic-deployments-with-github-actions-and-model-registry-webhooks)
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
 
