@@ -1,5 +1,5 @@
 <div align="center">
-    <a href='https://www.realworldml.xyz/'><img src='./images/logo_realworldml.png' width='250'></a>
+    <a href='https://www.realworldml.xyz/'><img src='./images/logo_realworldml.png' width='350'></a>
     <h1>Train and Deploy a Serverless API to predict crypto prices</h1>
     <img src="images/lecture_3.gif" width='450' />
 </div>
