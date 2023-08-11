@@ -1,9 +1,9 @@
 <div align="center">
-    <h2>Hands-on MLOps</h2>
-    <h1>Train and Deploy a Real-Time ML model</h1>
-    <h2>to predict crypto prices</h2>
+    <!-- <h2>Hands-on MLOps</h2> -->
+    <h1>Train and Deploy a Serverless API to predict crypto prices</h1>
+    <!-- <h2>to predict crypto prices</h2> -->
     <!-- <i>by Pau Labarta Bajo</i> -->
-    <i><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a></i> = 🚀
+    <h3><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a> = 🚀 </h3>
 </div>
 
 <br>
