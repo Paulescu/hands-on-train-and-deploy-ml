@@ -1,20 +1,19 @@
 <div align="center">
-    <!-- <h2>Hands-on MLOps</h2> -->
+    <a href='https://www.realworldml.xyz/'><img src='./images/logo_realworldml.png' width='250'></a>
     <h1>Train and Deploy a Serverless API to predict crypto prices</h1>
-    <!-- <h2>to predict crypto prices</h2> -->
-    <!-- <i>by Pau Labarta Bajo</i> -->
-    <h3><a href="https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github">CometML</a></i> + <i><a href="https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github">Cerebrium</a> = 🚀 </h3>
+    <img src="images/lecture_3.gif" width='450' />
 </div>
 
 <br>
 
-<p align="center">
-  <img src="images/lecture_3.gif" width='500' />
-</p>
+<!-- <p align="center">
+  <img src="images/lecture_3.gif" width='450' />
+</p> -->
 
 #### Contents
 * [The problem](#the-problem)
 * [This is what you will learn](#this-is-what-you-will-learn)
+* [Tools](#tools)
 * [Run the whole thing in 5 minutes](#run-the-whole-thing-in-5-minutes)
 * [Part 1. Model training 🏋️](#1-model-training)
     * [Step 1. Create your virtual environment](./lectures/01_model_training.md#1-create-the-virtual-environment-with-poetry)
@@ -44,6 +43,15 @@ You will learn to
 - **automate** safe deployments, using GitHub actions and Comet ML Model Registry.
 
 Without further ado, let's get to work!
+
+<br>
+
+## Tools
+We will use a 100% Serverless stack, so you don't need to set up and maintain infrastructure
+
+* [CometML](https://www.comet.com/signup?utm_source=pau&utm_medium=partner&utm_content=github) as experiment tracker and model registry
+* [Cerebrium](https://www.cerebrium.ai?utm_source=pau&utm_medium=partner&utm_content=github) as a deployment platform
+* [GitHub actions](https://github.com/features/actions) to automate workflows.
 
 <br>
 
@@ -153,6 +161,11 @@ I am preparing a new hands-on tutorial where you will learn all this.
     <a href="https://paulabartabajo.substack.com/">Newsletter</a>
 <br />
 </div>
+
+<div align="center">
+    <a href='https://www.realworldml.xyz/'><img src='./images/logo_realworldml.png' width='250'></a>
+</div>
+
 
 
 
