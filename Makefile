@@ -18,7 +18,7 @@ train:
 
 prepare-deployment:
 	rm -rf $(DEPLOYMENT_DIR) && mkdir $(DEPLOYMENT_DIR)
-	/Users/user/.local/bin/poetry export -f requirements.txt --output $(DEPLOYMENT_DIR)/requirements.txt --without-hashes
+	poetry export -f requirements.txt --output $(DEPLOYMENT_DIR)/requirements.txt --without-hashes
 	cp -r src/predict.py $(DEPLOYMENT_DIR)/main.py
 	cp -r src $(DEPLOYMENT_DIR)/src/
 	pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
