@@ -11,20 +11,20 @@ data:
 	poetry run python src/data.py
 
 baseline:
-	python3 -m  poetry run python src/baseline_model.py
+	poetry run python src/baseline_model.py
 
 train:
-	python3 -m poetry run python src/train.py
+	poetry run python src/train.py
 
 prepare-deployment:
 	rm -rf $(DEPLOYMENT_DIR) && mkdir $(DEPLOYMENT_DIR)
 	/Users/user/.local/bin/poetry export -f requirements.txt --output $(DEPLOYMENT_DIR)/requirements.txt --without-hashes
 	cp -r src/predict.py $(DEPLOYMENT_DIR)/main.py
 	cp -r src $(DEPLOYMENT_DIR)/src/
-	python -m pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
+	pip install cerebrium --upgrade # otherwise cerebrium deploy might fail
 	
-deploy:
-	cd $(DEPLOYMENT_DIR) && /Users/user/.local/bin/poetry run cerebrium deploy --api-key $(CEREBRIUM_API_KEY) --hardware CPU eth-price-1-hour-predictor --memory 3
+deploy: prepare-deployment
+	cd $(DEPLOYMENT_DIR) && poetry run cerebrium deploy --api-key $(CEREBRIUM_API_KEY) --hardware CPU eth-price-1-hour-predictor --memory 3
 
 test-endpoint:
 	python3 -m poetry run python src/test_endpoint.py
